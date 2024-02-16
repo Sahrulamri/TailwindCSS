@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Tailwind 5 || Transform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              animation: {
+                'spin-slow' : 'spin 3s linear infinite',
+                'goyang' : 'goyang 1s ease-in-out infinite'
+              },
+              keyframes: {
+                goyang: {
+                    '0%, 100%': {
+                        transform: 'rotate(-3deg)'
+                    },
+                    '50%' : {
+                        transform: 'rotate(3deg)'
+                    },
+                },
+              }
+            }
+          }
+        }
+      </script>
+</head>
+<body>
+    <p clas="text-center">hover dedngan transition tanpa wrapper</p>
+    <div class="w-40 h-40 bg-cyan-500 mx-auto my-24 rounded-md shadow-lg hover:scale-50 hover:rotate-45 hover:translate-x-52 hover:bg-slate-500 transition origin-left">
+    </div>
+    <p class="text-center">Hover dengan transition dan wrapper</p>
+    <div class="w-40 h-40 mx-auto group">
+        <div class="w-full h-full bg-amber-700 rounded-lg shadow-lg group-hover:rotate-180 origin-top-left transition duration-700 ease-in-out delay-200"></div>
+    </div>
+    <p class="text-center">Animate spin</p>
+    <div class="w-40 h-40 mx-auto my-24">
+        <div class="w-full h-full bg-violet-500 rounded-lg shadow-lg animate-spin"></div>
+    </div>
+    <p class="text-center">Animate ping</p>
+    <div class="w-40 h-40 mx-auto my-32">
+        <div class="w-full h-full bg-lime-500 rounded-lg shadow-lg animate-ping"></div>
+    </div>
+    <p class="text-center">Animate Pulse</p>
+    <div class="w-40 h-40 mx-auto my-32">
+        <div class="w-full h-full bg-rose-500 rounded-lg shadow-lg animate-pulse"></div>
+    </div>
+    <p class="text-center">Animate Bounce</p>
+    <div class="w-40 h-40 mx-auto my-32">
+        <div class="w-full h-full bg-emerald-600 rounded-lg shadow-lg animate-bounce"></div>
+    </div>
+    <p class="text-center">Custom animation dengan keyframes bawaan</p>
+    <div class="w-40 h-40 mx-auto my-24">
+        <div class="w-full h-full bg-slate-600 rounded-lg shadow-lg animate-spin-slow"></div>
+    </div>
+    <p class="text-center">Custom animation dan keyframes</p>
+    <div class="w-40 h-40 mx-auto my-24">
+        <div class="w-full h-full bg-purple-800 rounded-lg shadow-lg animate-goyang"></div>
+    </div>
+</body>
+</html>

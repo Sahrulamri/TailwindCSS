@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>belajar tailwind 4</title>
+   <style>
+        #toggle:checked ~ label .toggle-circle {
+            transform: translateX(3.01rem);
+            transition: .5s ease-in-out;
+        }
+        #toggle ~ label .toggle-circle {
+            transform: translateX(-0.1rem);
+            transition: .5s ease-in-out;
+        }
+   </style>
+</head>
+<body class="dark:bg-slate-800 dark:text-white">
+
+    <div class="m-12 flex justify-center">
+        <span class="text-sm text-slate-500 mr-2">Light</span>
+        <input type="checkbox" id="toggle" class="hidden">
+        <label for="toggle">
+            <div class="w-20 h-8 bg-slate-400 cursor-pointer rounded-full">
+                <div class="h-8 w-8 bg-slate-800 dark:bg-white rounded-full flex items-center toggle-circle">
+                </div>
+            </div>
+        </label>
+        <span class="text-sm text-slate-500 ml-2">Dark</span>
+    </div>
+
+
+    <button class="py-2 px-4 bg-sky-500 my-12 mx-auto block rounded-full text-white font-serif hover:bg-sky-600 active:bg-sky-700 focus:ring focus:ring-sky-900 dark:bg-slate-300 dark:text-gray-800 dark:hover:bg-gray-50">Simpan</button>
+
+    <div class="max-w-lg my-10 mx-auto shadow-md rounded-xl border border-zinc-400 p-7 hover:bg-sky-500 group dark:hover:bg-slate-300">
+        <h5 class="font-semibold text-3xl mb-3 group-hover:text-white dark:group-hover:text-gray-700">My Card</h5>
+        <p class="text-slate-600 group-hover:text-white selection:bg-emerald-400 selection:hover:text-gray-800 first-line:uppercase first-line:tracking-widest first-letter:font-bold first-letter:text-7xl first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left dark:group-hover:text-gray-700">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum porro at autem dolorem, et, neque, ut eius quisquam magni harum consectetur perspiciatis quia explicabo est iste voluptates? Aperiam possimus excepturi odit numquam asperiores eaque doloribus, iure voluptatum temporibus nulla sunt corrupti magnam ratione velit inventore iste alias rerum id similique quas mollitia. Debitis a pariatur soluta perspiciatis odio reiciendis mollitia eius eveniet cupiditate tenetur non, aperiam quas repellendus facilis. Perferendis, similique? Excepturi sint ex non repellendus quis accusamus nobis ipsum quod, cupiditate eos rem quia eum dolores unde maxime sit odit corrupti amet alias esse. Recusandae repudiandae dolorum architecto harum!</p>
+    </div>
+    <div class="max-w-lg p-5 rounded-lg border border-slate-400 m-10 shadow-lg dark:shadow-lg dark:shadow-slate-100 shadow-gray-900 dark:bg-slate-400">
+        <form action="">
+            <label for="email"><span class="block m-1 font-semibold text-slate-800 after:content-['*'] after:ml-1 after:text-red-700">Email :</span></label>
+            
+            <input type="email" id="email" placeholder="masukkan email..." class="px-3 py-2 border-2 shadow-xl dark:shadow-xl dark:shadow-slate-100 shadow-gray-900 w-full rounded-xl text-sm block placeholder:text-slate-600 dark:placeholder:text-white focus:outline-none focus:ring-1 focus:ring-green-700 focus:border-green-700
+            invalid:text-red-700 invalid:focus:border-red-700 invalid:focus:ring-red-700 peer dark:bg-slate-400">
+            <p class="text-sm m-1 text-red-700 font-extrabold invisible peer-invalid:visible ">Email tidak valid</p>
+        </form>
+    </div>
+    <script>
+        const toggle = document.querySelector('#toggle');
+        const html = document.querySelector('html');
+
+        toggle.addEventListener('click', function() {
+            toggle.checked ? html.classList.add('dark') : html.classList.remove('dark');
+        });
+    </script>
+</body>
+</html>
